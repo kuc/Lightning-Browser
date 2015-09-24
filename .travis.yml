@@ -16,4 +16,11 @@ before_install:
   - git submodule update --init --recursive
 install:
   - ./gradlew
-script:
+deploy:
+  provider: releases
+  api_key:
+    secure: c1DZ7J132la+DyjSmBJvkd/RNNAzTioO60rIdEG1hUxLFddlhb7qWCYC7l0ku2kdnaFSTC5bvlgK66w78T6w46BdHG29bg979JM21hyX1ESJG/QmFoOOXvtgBBCoBF9nw92W7BYR7XYRYzAEXVvpusSt3c84+BozFii3XFKG5cxDy28FI6ueEoajH0ZR9x18VKTqiTloyKXTpMY1ioCCOgHkIPC9SSjVSZekQgkcW7U+RyPlp42/PzmlGZbbIJDKjeJM/E9msdHT1V/gIyn2dN9yeT3XE02FOis1uecWZkFluPlc7DpaeyKx8HH3gu3vt8m7chk1QGf7Ct0lTSDKoSTc+6fdzWrALpbuvYjnGa6Ii71FIg98BL297gU89zD5qw7Sgv19pByI5MzrL3PgHrdzrAz2YT2RX8SvYeP2HYRbJo5Ba+FxBVJSgCxShtCBaVjoImvJDBXoYE6Vr+BMXSibKmK/eqpZnBJu7fHQRt/d/SRy7Qn7f9fVkakC8LZOCGzzydig36D41gLIgNTTtYHkY+vMW5sEZGXQjrEL4WA32o5p+1Kk/FpNZ+7Y7GfRhjRrnpPJwByTotZnCEyhiS2T/ymOOtROwHUkSKJBv2rG9ES/TGQoQ9g159BOQqAnM/YWNVd7NFtGsLz1vSH8+8qv56HRgDnhhd6u5C1ZjI4=
+  file: app/build/outputs/apk/app-lightningPlus-debug.apk
+  skip_cleanup: true
+  on:
+    tags: true
